@@ -8,4 +8,3 @@ int main(int argc, char const *argv[])
     std::cout<<"Hyun."<<std::endl;
     return 0;
 }
-
