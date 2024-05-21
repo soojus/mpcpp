@@ -1,12 +1,20 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    cout<<"주소를 입력하세요: ";
-    char address[100];
-    cin.getline(address,sizeof(address),'\n');
-    cout << "주소는 " << address << "입니다\n";
+    string song("Falling in love with you");
+    string elvis("Elvis Presley");
+    string singer;
+
+    cout << song + "를 부른 가수는";
+    cout << "(힌트 : 첫글자는 " << elvis[0] << ")?";
+
+    getline(cin, singer);
+    if(singer == elvis)
+        cout << "맞았습니다.";
+    else
+        cout << "틀렸습니다. " + elvis + "입니다." << endl;
     return 0;
 }
