@@ -1,24 +1,36 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
-
 using namespace std;
+
+class Circle
+{
+private:
+    int radius;
+public:
+    Circle(){
+        radius = 1;
+    }
+    Circle(int r)
+    {
+        radius = r;
+    }
+    int getRadius()
+    {
+        return radius;
+    }
+    double getArea()
+    {
+        return 3.14 * radius * radius;
+    }
+};
+
+
 
 int main(int argc, char const *argv[])
 {
-    string song("Falling in love with you");
-    string elvis("Elvis Presley");
-    string singer;
+    Circle donut;
+    Circle pizza(30);
+    cout << pizza.getArea() << endl;
+    cout << donut.getArea() << endl;
 
-    
-    cout<<song + "를 부른 가수는";
-    cout<<"(힌트: 첫글자는)"<<elvis[0] <<  ")";
-    //cin.getline(singer, 20);
-    getline(cin, singer);
-    if(singer==elvis)
-        cout<<"Elvis!";
-    else
-        cout<<"Elvis 가 아닙니다. !";
-
-    return 0;
+    return 0; 
 }
