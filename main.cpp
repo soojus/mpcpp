@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 
     getline(cin, singer);
     if(singer == elvis)
-        cout << "맞았습니다.";
+        cout << "맞았습니다." << endl;
     else
         cout << "틀렸습니다. " + elvis + "입니다." << endl;
     return 0;
