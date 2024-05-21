@@ -8,8 +8,11 @@ int main(int argc, char const *argv[])
     {
         Circle donut;
         Circle pizza(30);
+        Ecllipse e(10, 20);
         cout << pizza.getArea() << endl;
         cout << donut.getArea() << endl;
+        cout << e.getArea() << endl;
+        
     }
     Rectangle box(4, 40);
     Rectangle phone(10, 20);
