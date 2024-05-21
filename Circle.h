@@ -1,9 +1,10 @@
 class Circle
 {
 private:
-    int radius;
+    int radius=0;
 public:
     Circle();
+    ~Circle();
     Circle(int r);
     int getRadius();
     double getArea();
