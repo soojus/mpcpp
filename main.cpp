@@ -15,4 +15,3 @@ int main(int argc, char const *argv[])
     cout << "면적: " << width * height << endl;
     return 0;
 }
-
