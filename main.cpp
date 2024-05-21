@@ -6,22 +6,18 @@ class Circle
 private:
     int radius;
 public:
-    Circle(){
-        radius = 1;
-    }
-    Circle(int r)
-    {
-        radius = r;
-    }
-    int getRadius()
-    {
-        return radius;
-    }
-    double getArea()
-    {
-        return 3.14 * radius * radius;
-    }
+    Circle();
+    Circle(int r);
+    int getRadius();
+    double getArea();
 };
+
+Circle::Circle() {radius=1;}
+Circle::Circle(int r)   {radius=r;}
+int Circle::getRadius() { return radius; }
+double Circle::getArea() { return 3.14 * radius * radius; }
+
+
 
 
 
