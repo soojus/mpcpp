@@ -1,21 +1,9 @@
 #include <iostream>
 #include <string>
-
+#include "Circle.h"
+#include "Rectangle.h"
 using namespace std;
 
-class  Circle {
-private:
-    int radius;
-public:
-    Circle(){}
-
-    int getRadius(int radius){
-        return this->radius;
-    }
-    double getArea() {
-        return 3.14*this->radius*this->radius;
-    }
-};
 
 int main(int argc, char const *argv[])
 {
@@ -50,6 +38,13 @@ int main(int argc, char const *argv[])
     // cout << "singer: " << singer << endl;
 
 
+    Circle dounut(5);
+    dounut.getArea();
+    cout<<"dounut의 AREAs: "<<dounut.getArea()<<endl;
+    Rectangle rect;
+    cout<< rect.getArea() << endl;
 
     return 0;
 }
+
+
