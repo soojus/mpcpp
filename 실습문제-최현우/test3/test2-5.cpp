@@ -10,6 +10,7 @@ int main() {
     for(char x : a){
         if(x == ch) count++;    
     }
-    cout << count;
+    cout << count<< endl;
+
     return 0;
 }
