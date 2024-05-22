@@ -1,3 +1,4 @@
+#pragma once
 #include "Rectangle.h"
 
 class Circle
@@ -8,11 +9,12 @@ public:
     Circle(int r);
     int getRadius();
     double getArea();
+    void setRadius(int r);
 private:
     Rectangle* rect;
     int radius=0;
 protected:
-    void setRadius(int r);
+    
 };
 
 class Ecllipse : public Circle{
