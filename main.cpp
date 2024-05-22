@@ -10,10 +10,8 @@ int main(int argc, char const *argv[])
         Circle *pizza = new Circle(30);
 
 
-        Circle* circleArray[2]={donut,pizza};
-
-        circleArray[0]->setRadius(10);
-        circleArray[1]->setRadius(20);
+        Circle* circleArray=new Circle[2];
+        
 
         Ecllipse e(10, 20);
         cout << pizza->getArea() << endl;
@@ -21,6 +19,7 @@ int main(int argc, char const *argv[])
         cout << e.getArea() << endl;
         delete donut;
         delete pizza;
+        delete[] circleArray;
     }
     Rectangle *box = new Rectangle(4, 40);
     Rectangle *phone = new Rectangle(10, 20);
