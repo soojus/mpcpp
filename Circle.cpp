@@ -9,6 +9,7 @@ Circle::Circle() {
 Circle::~Circle()
 {
     std::cout<<"Destroying Circle"<<std::endl;
+    delete rect;
 }
 Circle::Circle(int r) { radius = r; }
 int Circle::getRadius() { return radius; }
