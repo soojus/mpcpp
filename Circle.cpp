@@ -1,7 +1,11 @@
 #include "Circle.h"
 #include <iostream>
+#include "Rectangle.h"
 
-Circle::Circle() {radius=1;}
+Circle::Circle() {
+    radius=1;
+    Rectangle *rect = new Rectangle(10,10);
+}
 Circle::~Circle()
 {
     std::cout<<"Destroying Circle"<<std::endl;
