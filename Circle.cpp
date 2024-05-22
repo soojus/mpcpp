@@ -11,7 +11,7 @@ Circle::~Circle()
     std::cout<<"Destroying Circle"<<std::endl;
     delete rect;
 }
-Circle::Circle(int r) { radius = r; }
+Circle::Circle(int radius) { this->radius = radius; }
 int Circle::getRadius() { return radius; }
 double Circle::getArea() { return 3.14 * radius * radius; }
 

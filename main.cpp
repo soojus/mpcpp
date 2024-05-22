@@ -1,35 +1,28 @@
 #include <iostream>
-#include "Circle.h"
-#include "Rectangle.h"
-
+#include <string>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    {
-        Circle *donut = new Circle();
-        Circle *pizza = new Circle(30);
+    string str;
+    string *address = new string("www.google.com");
+    string *paddress = address;
 
-        Circle* circleArray[2] = {donut, pizza};
+    char text[] = "Hello World!";
+    string *ptext = new string(text);
 
-        circleArray[0]->setRadius(10);
-        circleArray[1]->setRadius(20);
+    string *p = new string("Hello World");
+    cout << *p << endl;
 
-        Ecllipse e(10, 20);
-        cout << "pizza의 면적 = " << pizza->getArea() << endl;
-        cout << "donut의 면적 = " << donut->getArea() << endl;
-        cout << e.getArea() << endl;
-        delete donut;
-        delete pizza;
-    }
+    cout << p->append("!").insert(5, "daewon").replace(0, 5, "Hola ").size();
+    cout << *p << endl;
+    
+    cout << p->compare("Hello World!") << endl;
 
-    Rectangle *box = new Rectangle(4, 40);
-    Rectangle *phone = new Rectangle(10, 20);
-    cout << "box의 면적 = " << box->getArea() << endl;
-    cout << "phone의 면적 = " << phone->getArea() << endl;
 
-    delete box;
-    delete phone;
+    delete paddress;
+    delete ptext;
+    delete p;
 
     return 0;
 }
