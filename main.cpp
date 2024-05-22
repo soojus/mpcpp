@@ -8,6 +8,13 @@ int main(int argc, char const *argv[])
     {
         Circle *donut = new Circle();
         Circle *pizza = new Circle(30);
+
+
+        Circle* circleArray[2]={donut,pizza};
+
+        circleArray[0]->setRadius(10);
+        circleArray[1]->setRadius(20);
+
         Ecllipse e(10, 20);
         cout << pizza->getArea() << endl;
         cout << donut->getArea() << endl;
