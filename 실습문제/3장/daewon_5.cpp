@@ -13,12 +13,11 @@ public:
     int nextInRange(int min, int max);
 };
 
-Random::Random(){}
+Random::Random(){ srand((unsigned)time(0)); }
 
 Random::~Random(){}
 
 int Random::next(){
-    srand((unsigned)time(0));
     return rand();
 }
 

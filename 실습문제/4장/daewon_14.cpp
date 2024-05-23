@@ -24,6 +24,7 @@ private:
 public:
     PlayerManager(int size);
     ~PlayerManager();
+    void setname(int id, string name);
 };
 
 PlayerManager::PlayerManager(int size){
@@ -33,6 +34,10 @@ PlayerManager::PlayerManager(int size){
 
 PlayerManager::~PlayerManager(){
     delete[] p;
+}
+
+void PlayerManager::setname(int id, string name){
+    p[id].setPlayer(name);
 }
 
 // class Random
@@ -46,12 +51,11 @@ public:
     int nextInRange(int min, int max);
 };
 
-Random::Random(){}
+Random::Random(){ srand((unsigned)time(0)); }
 
 Random::~Random(){}
 
 int Random::next(){
-    srand((unsigned)time(0));
     return rand();
 }
 
@@ -63,27 +67,47 @@ int Random::nextInRange(int min, int max){
 class GamblingGame{
 private:
     PlayerManager *pm;
-public:
+    Random *r;
     void setGame();
-    void endGame();
+public:
+    GamblingGame();
+    ~GamblingGame();
     void play();
 };
 
-void GamblingGame::setGame(){
-    string name;
+GamblingGame::GamblingGame(){
+    pm = new PlayerManager(2);
+    r = new Random();
 }
 
-void GamblingGame::endGame(){
+GamblingGame::~GamblingGame(){
+    delete pm;
+    delete r;
+}
+
+void GamblingGame::setGame(){
+    cout << "***** 갬블링 게임을 시작합니다. *****" << endl;
+    string name[2];
+
+    cout << "첫번째 선수 이름>>";
+    cin >> name[0];
+    pm->setname(0, name[0]);
+
+    cout << "두번째 선수 이름>>";
+    cin >> name[1];
+    pm->setname(1, name[1]);
 }
 
 void GamblingGame::play(){
-    cout << "***** 갬블링 게임을 시작합니다. *****" << endl;
 }
+
+
 
 
 int main(int argc, char const *argv[])
 {
-
+    GamblingGame gg;
+    gg.play();
 
     return 0;
 }
