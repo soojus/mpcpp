@@ -1,24 +1,37 @@
 #include <iostream>
-#include <string>
+#include "Circle.h"
+#include "Rectangle.h"
 using namespace std;
-
+void increase(Circle& c)
+{
+    int r = c.getRadius();
+    c.setRadius(r + 1);
+}
+Circle* getCircle()
+{
+    Circle* temp =new Circle(30);
+    return temp;
+}
 int main(int argc, char const *argv[])
 {
-    string str;
-    string *address = new string("www.google.com");
-    string *paddress = address;
 
-    char text[] = "Hello World";
-    string *ptext = new string(text);
+    Circle waffle(30);
+    waffle.setName("waffle");
+    increase(waffle);
+    cout << waffle.getRadius() << endl;
 
-    string *p = new string("Hello World");
-    cout<<*p<<endl;
+    Circle pizza(waffle);
+    pizza.setName("pizza");
 
-    cout<<p->append("!").insert(5, " andrew ").replace(0, 5, "Hola").size();
-    cout<<*p<<endl;
+    cout << waffle.getName()<< endl;
+    cout << pizza.getName()<< endl;
 
-    cout<< p->compare("Hello World!!")<<endl;
+    Circle c;
+    cout<<c.getRadius()<<endl;
+    Circle* c2;
+    c2=getCircle();
+    cout<<c.getRadius()<<endl;
 
-
+    delete c2;
     return 0;
 }
