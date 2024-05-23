@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <limits> // numeric_limits를 사용하기 위해 필요
 using namespace std;
 
 // class Player
