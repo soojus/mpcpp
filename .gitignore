@@ -2,5 +2,5 @@
 *.o
 /build
 .vscode/
-실습문제-최현우
 .gitignore
+study

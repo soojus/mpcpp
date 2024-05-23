@@ -5,3 +5,5 @@ valgrind -> 메모리 alloc 정보확인 프로그램  명령어 : valgrind a./o
 동적 배열 해제시 delete[]
 
 this->  //객체 멤버변수를 가르킬때
+
+git switch "branch name" checkout 대용
