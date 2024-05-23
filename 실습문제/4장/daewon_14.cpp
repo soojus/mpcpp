@@ -10,10 +10,15 @@ private:
     string name;
 public:
     void setPlayer(string name);
+    string getname();
 };
 
 void Player::setPlayer(string name){
     this->name = name;
+}
+
+string Player::getname(){
+    return name;
 }
 
 // class PlayerManager
@@ -25,6 +30,7 @@ public:
     PlayerManager(int size);
     ~PlayerManager();
     void setname(int id, string name);
+    string getname(int id);
 };
 
 PlayerManager::PlayerManager(int size){
@@ -38,6 +44,10 @@ PlayerManager::~PlayerManager(){
 
 void PlayerManager::setname(int id, string name){
     p[id].setPlayer(name);
+}
+
+string PlayerManager::getname(int id){
+    return p[id].getname();
 }
 
 // class Random
@@ -99,6 +109,21 @@ void GamblingGame::setGame(){
 }
 
 void GamblingGame::play(){
+    setGame();
+    int currentPlayer = 0;
+    int numOfIntegers = 3;
+    int randomNumbers[numOfIntegers-1];
+
+    while(1){
+        cout << pm->getname(currentPlayer);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        for(int i = 0; i < numOfIntegers-1; i++){
+            randomNumbers[i] = r->nextInRange(0, 2);
+            cout << randomNumbers[i] << " ";
+        }
+
+
+    }
 }
 
 
