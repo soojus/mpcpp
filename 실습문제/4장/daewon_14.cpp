@@ -107,6 +107,8 @@ void GamblingGame::setGame(){
     cout << "두번째 선수 이름>>";
     cin >> name[1];
     pm->setname(1, name[1]);
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 void GamblingGame::play(){
@@ -114,16 +116,25 @@ void GamblingGame::play(){
     int currentPlayer = 0;
     int numOfIntegers = 3;
     int randomNumbers[numOfIntegers-1];
+    char Enter[1];
 
     while(1){
-        cout << pm->getname(currentPlayer);
+        cout << pm->getname(currentPlayer) << ":<Enter>";
+        // cin.getline(Enter,'\n');
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        for(int i = 0; i < numOfIntegers-1; i++){
+        cout << "              ";
+        for(int i = 0; i < numOfIntegers; i++){
             randomNumbers[i] = r->nextInRange(0, 2);
             cout << randomNumbers[i] << " ";
         }
 
-
+        if(randomNumbers[0] == randomNumbers[1] && randomNumbers[1] == randomNumbers[2]){
+            cout << pm->getname(currentPlayer) << "님 승리!!" << endl;
+            break;
+        } else {
+            cout << "아쉽군요!" << endl;
+            currentPlayer = (currentPlayer + 1) % 2;
+        }
     }
 }
 
