@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 char& find(char a[], char c, bool& success);
