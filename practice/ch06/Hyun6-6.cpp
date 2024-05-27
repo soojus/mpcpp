@@ -21,11 +21,16 @@ public:
     }
     static int* remove(int s1[], int s2[],int size, int& retSize)
     {
+        int* removedarray =new int[size];
         for(int i=0; i<size; i++) 
         {
-            std::find(s2, s2[i], s1[i]);
+            find(s2[0],s2[size-1],s1[i]);
+            
         }  
+        return removedarray;
     }
+
+    
 };
 
 
